@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React from 'react';
+import useSecondContext from './Header/SecondContext';
 function App() {
+  const Name = useSecondContext("varma");
+  const AnotherName = useSecondContext("uppalpati");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <lable>Enter Name :   <input {...Name}/> </lable>
+    
+      <label> Enter Another Name : <input {...AnotherName}/> </label>
+      <p> Hi
+      {Name.initial}
+      <br/>
+      {AnotherName.initial}
+      </p>
     </div>
   );
 }
-
 export default App;
